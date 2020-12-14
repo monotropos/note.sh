@@ -16,6 +16,7 @@ This script was heavily inspired by [todo.txt-cli](https://github.com/todotxt/to
 - Simple: 1 Bash script, 1 environment variable and 1 symlink.
 - Markdown.
 - Search notes.
+- Quick add notes
 - Sync notes across multiple computers.
 
 ## Setup

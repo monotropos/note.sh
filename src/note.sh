@@ -11,18 +11,24 @@ function usage() {
   echo "Usage: note.sh [action]"
   echo
   echo "  actions:"
+  echo "    add [new note in quotes to add at end of today-file]"
   echo "    grep [pattern]"
 }
 
 mkdir -p "$NOTE_DIR"
+TODAYFILE="$NOTE_DIR/$(date +'%Y-%m-%d').md"
+
 
 if [ $# -eq 0 ]; then
-    $EDITOR "$NOTE_DIR/$(date +'%Y-%m-%d').md"
+    $EDITOR "$TODAYFILE"
 else
   case $1 in
     grep)
       grep -i -r --color "$2" "$NOTE_DIR"
       ;;
+	add)
+	  echo "$2" >> "$TODAYFILE"
+	  ;;
     *)
       usage
       ;;
